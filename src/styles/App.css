@@ -1,0 +1,213 @@
+@font-face {
+  font-family: 'HandelGo';
+  src: url('./fonts/HandelGo.ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+#root {
+  justify-content: center;
+}
+
+.MuiTablePagination-selectLabel {
+  font-family: 'HandelGo';
+  font-size: large;
+}
+
+#chart {
+  font-family: 'HandelGo';
+  padding: 1%;
+  border-radius: 17px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+#figure {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  width: 40px;
+  text-align: center;
+  margin: 1%;
+  border-radius: 7px;
+  padding: 3px;
+}
+
+#dash {
+  background-color: transparent;
+  flex-grow: 1;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 1%; 
+  margin: 0.25%;
+}
+
+#bar {
+  border-radius: 7px;
+  background-color: #F8F9FA;
+  background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: 'HandelGo';
+}
+
+#barDark {
+  border-radius: 7px;
+  background-color: #888888;
+  background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: 'HandelGo';
+}
+
+#cell {
+  text-align: center;
+  font-family: 'HandelGo';
+  color: #ff7b09;
+  padding: 1%;
+}
+
+#cellDark {
+  text-align: center;
+  font-family: 'HandelGo';
+  color: #F8F9FA;;
+  padding: 1%;
+}
+
+#company {
+  text-align: center;
+  color: white;
+  background-color: #49089e;
+  font-weight: bold;
+  background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+  font-family: 'HandelGo';
+}
+
+#companyDark {
+  text-align: center;
+  color: white;
+  background-color: #49089e;
+  font-weight: bold;
+  background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+  font-family: 'HandelGo';
+}
+
+#columns {
+  text-align: center;
+  background-color: #F8F9FA;
+  background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+  font-family: 'HandelGo';
+}
+
+#columnsDark {
+  background-color: #888888;
+  background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+  font-family: 'HandelGo';
+}
+
+#table {
+  width: 96%;
+  margin: 2%;
+  background-color: #F8F9FA;
+  border: 3px #eeeeee;
+  border-radius: 20px;
+  cursor: pointer;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#tableDark {
+  width: 96%;
+  margin: 2%;
+  background-color: #898989;
+  border: 3px black;
+  border-radius: 20px;
+  cursor: pointer;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#pagination {
+  /* color: #49089e; */
+  font-size: large;
+  width: 100%;
+}
+
+#tagFilter {
+  font-family: 'HandelGo';
+  width: fit-content;
+  background-color: #49089e;
+}
+
+#details {
+  color: white;
+  /* border-radius: 9px; */
+  size: 50px;
+ }
+
+ #details:hover {
+  color: #ff7b09;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#adminButton {
+  height: 50px;
+  width: 50px;
+  border-radius: 9px;
+  size: 50px;
+ }
+
+ #adminButton:hover {
+  color: #ff7b09;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#profile {
+  margin-left: 25%;
+  border-radius: 50%;
+}
+
+#profile:hover {
+  border: thick;
+  color: #ff7b09;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#nav {
+  background-color: #F8F9FA;
+  background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: 'HandelGo';
+}
+
+#navDark {
+  background-color: #888888;
+  background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: 'HandelGo';
+}
+
+@media only screen and (max-width: 490px) {
+  #tool {
+    display: flex;
+    justify-content: center;
+  }
+
+  #logo {
+    display: none;
+  }
+
+  #navButton {
+    margin-top: -10px;
+  }
+
+  #input {
+    margin-left: 4%;
+    display: grid;
+    font-family: 'HandelGo';
+  }
+
+  #download {
+    margin-left: 25%;
+  }
+
+}

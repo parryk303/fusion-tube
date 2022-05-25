@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'HandelGo';
+  src: url('./fonts/HandelGo.ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: 'HandelGo';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(a.jpg);
+}
+
+#signin {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
