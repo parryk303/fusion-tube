@@ -112,9 +112,11 @@ const App = () => {
             {/* <HeroSection /> */}
             {genres && (
               <Box sx={{ flexGrow: 1, width: '100%', justifyContent: 'center', marginTop: '2%' }}>
-                {Object.values(genres).map((genre) => (
+                {/* {Object.values(genres).map((genre) => (
                   <Section key={genre.value} genre={genre.value} />
-                ))}
+                ))} */}
+                 <Section genre={'Action'} name={'RIN'} />
+                 <Section genre={'Sci-Fi'} name={'Snyper'}/>
               </Box>
             )}
             <div

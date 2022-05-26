@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { styled } from '@mui/material/styles';
+import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
+import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import ComputerIcon from '@mui/icons-material/Computer';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
+
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import PrintIcon from '@mui/icons-material/Print';
@@ -21,10 +26,10 @@ const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
 }));
 
 const actions = [
-  { icon: <FileCopyIcon />, name: 'Copy' },
-  { icon: <SaveIcon />, name: 'Save' },
-  { icon: <PrintIcon />, name: 'Print' },
-  { icon: <ShareIcon />, name: 'Share' },
+  { icon: <AccountTreeTwoToneIcon />, name: 'RIN' },
+  { icon: <LocationSearchingIcon />, name: 'Snypr' },
+  // { icon: <ComputerIcon />, name: 'Nxlog' },
+  // { icon: <PrecisionManufacturingIcon />, name: 'SOAR' },
 ];
 
 export default function PlaygroundSpeedDial() {

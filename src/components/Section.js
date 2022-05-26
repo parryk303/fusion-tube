@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Card from './Card'
 import { Box, Typography } from '@mui/material';
 
-const Section = ({ genre }) => {
+const Section = ({ genre, name }) => {
   const [movies, setMovies] = useState(null)
   const [pageState, setPageState] = useState(null)
 
@@ -24,7 +24,7 @@ const Section = ({ genre }) => {
   return (
     <Box sx={{ justifyContent: 'center', display: 'grid' }}>
       <Box sx={{ textAlign: 'center', display: 'flex' }}>
-        <Typography variant='h4'>{genre}</Typography>
+        <Typography variant='h4'>{name}</Typography>
       </Box>
       <Box sx={{ justifyContent: 'center', display: 'flex', marginLeft: '10%' }}>
         {movies && (
