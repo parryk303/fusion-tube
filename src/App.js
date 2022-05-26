@@ -1,4 +1,4 @@
-import "./styles/App.css"
+import './styles/App.css'
 import './styles/index.css';
 import {
   Toolbar,
@@ -14,8 +14,9 @@ import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
 import { supabase } from './supabaseClient';
-import Section from "./components/Section"
-import HeroSection from "./components/HeroSection"
+import Section from './components/Section'
+import HeroSection from './components/HeroSection';
+import Video from './components/Video';
 import NavBar from './components/NavBar';
 import Signin from './signin';
 import VerifyUsers from './verifyusers';
@@ -45,6 +46,8 @@ const App = () => {
   const [admin, setAdmin] = useState(false);
   const [approved, setApproved] = useState();
   const [awaiting, setAwaiting] = useState();
+
+  const [show, setShow] = useState(false);
 
   const [genres, setGenres] = useState(null)
   const [limit, setLimit] = useState(genreIncrement)
@@ -82,8 +85,8 @@ const App = () => {
   }, [])
 
   const fetchData = async () => {
-    const response = await fetch("/.netlify/functions/getGenres", {
-      method: "POST",
+    const response = await fetch('/.netlify/functions/getGenres', {
+      method: 'POST',
       body: limit,
     })
     const responseBody = await response.json()
@@ -101,6 +104,9 @@ const App = () => {
     setIsDarkTheme(!isDarkTheme);
   };
 
+  const handleShow = () => {
+    setShow(!show);
+  };
 
   return (
     <>
@@ -108,23 +114,27 @@ const App = () => {
         <ThemeProvider theme={isDarkTheme ? createTheme(dark) : createTheme(light)}>
           <NavBar isDarkTheme={isDarkTheme} changeTheme={changeTheme} admin={admin} setAdmin={setAdmin} />
           <CssBaseline />
-          <Box sx={{  justifyContent: 'center', display: 'grid' }}>
+          <Box sx={{ flexGrow: 1, width: '100%', justifyContent: 'center', display: 'grid' }}>
             {/* <HeroSection /> */}
-            {genres && (
+            {genres && !show && (
               <Box sx={{ flexGrow: 1, width: '100%', justifyContent: 'center', marginTop: '2%' }}>
                 {/* {Object.values(genres).map((genre) => (
                   <Section key={genre.value} genre={genre.value} />
                 ))} */}
-                 <Section genre={'Action'} name={'RIN'} />
-                 <Section genre={'Sci-Fi'} name={'Snyper'}/>
+                
+                 <Section genre={'Action'} name={'RIN'} handleShow={handleShow} />
+                 <Section genre={'Sci-Fi'} name={'Snyper'} />
+                 <Section genre={'Nxlogs'} name={'Nxlogs'} />
               </Box>
             )}
+            <Video handleShow={handleShow} />
             <div
-              className="page-end"
+              className='page-end'
               onMouseEnter={() => {
                 setLimit(limit + genreIncrement)
               }}
             />
+            
             {admin &&
               <VerifyUsers approved={approved} setApproved={setApproved} awaiting={awaiting} setAwaiting={setAwaiting} />
             }

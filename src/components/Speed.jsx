@@ -8,11 +8,6 @@ import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import PrintIcon from '@mui/icons-material/Print';
-import ShareIcon from '@mui/icons-material/Share';
-
 const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
   position: 'absolute',
   '&.MuiSpeedDial-directionUp, &.MuiSpeedDial-directionLeft': {
@@ -28,7 +23,7 @@ const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
 const actions = [
   { icon: <AccountTreeTwoToneIcon />, name: 'RIN' },
   { icon: <LocationSearchingIcon />, name: 'Snypr' },
-  // { icon: <ComputerIcon />, name: 'Nxlog' },
+  { icon: <ComputerIcon />, name: 'Nxlogs' },
   // { icon: <PrecisionManufacturingIcon />, name: 'SOAR' },
 ];
 

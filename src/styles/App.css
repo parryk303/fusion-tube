@@ -6,6 +6,13 @@
   font-display: swap;
 }
 
+#player {
+width: 70vw;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+margin-top: 2%;
+padding: 30px;
+}
+
 .nav {
   height: 200px;
   width: 1500px;

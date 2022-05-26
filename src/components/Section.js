@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Card from './Card'
 import { Box, Typography } from '@mui/material';
 
-const Section = ({ genre, name }) => {
+const Section = ({ genre, name, handleShow }) => {
   const [movies, setMovies] = useState(null)
   const [pageState, setPageState] = useState(null)
 
@@ -30,7 +30,7 @@ const Section = ({ genre, name }) => {
         {movies && (
           <div className='movie-section'>
             {movies.map((movie, index) => (
-              <Card key={index} movie={movie} />
+              <Card key={index} movie={movie} handleShow={handleShow} />
             ))}
             <div
               className='more-button'
