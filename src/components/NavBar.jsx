@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import { supabase } from '../supabaseClient';
 import { useState } from 'react';
+import Speed from './Speed';
 
 export default function NavBar({ isDarkTheme, changeTheme, admin, setAdmin }) {
   const [open, setOpen] = useState(false);
@@ -33,17 +34,14 @@ export default function NavBar({ isDarkTheme, changeTheme, admin, setAdmin }) {
       <AppBar id={`${isDarkTheme ? 'navDark' : 'nav'}`} position='static'>
         <Toolbar id='tool' sx={{ justifyContent: 'space-between', padding: '1%' }}>
           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            {user && admins.includes(user.email) &&
-              <IconButton id='adminButton' size='large' aria-label='Collection' sx={{ mr: 2 }} onClick={() => setAdmin(!admin)}>
-                <VerifiedUserIcon />
-              </IconButton>
-            }
+            <Speed />
           </Box>
           <Box>
             <img id='logo' src='/logoBig.png' alt='logo' width='481' height='80' />
           </Box>
           {user &&
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+             
               <img
                 onClick={handleClick('bottom')}
                 id='profile'
@@ -65,6 +63,11 @@ export default function NavBar({ isDarkTheme, changeTheme, admin, setAdmin }) {
                   </Fade>
                 )}
               </Popper>
+              {user && admins.includes(user.email) &&
+                <IconButton id='adminButton' size='large' aria-label='Collection' sx={{ mr: 2 }} onClick={() => setAdmin(!admin)}>
+                  <VerifiedUserIcon />
+                </IconButton>
+              }
             </Box>
           }
         </Toolbar>
