@@ -1,16 +1,13 @@
 import './styles/App.css'
 import './styles/index.css';
 import {
-
   Box
-
 } from '@mui/material';
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
 import { supabase } from './supabaseClient';
 import Section from './components/Section'
-import HeroSection from './components/HeroSection';
 import Video from './components/Video';
 import NavBar from './components/NavBar';
 import Signin from './signin';
@@ -44,7 +41,7 @@ const App = () => {
 
   const [show, setShow] = useState(false);
   const [saved, setSaved] = useState(false);
-  const [url, setUrl] = useState(null);
+  const [movie, setMovie] = useState();
 
   const [genres, setGenres] = useState(null)
   const [limit, setLimit] = useState(genreIncrement)
@@ -101,16 +98,13 @@ const App = () => {
     setIsDarkTheme(!isDarkTheme);
   };
 
-  const handleShow = () => {
+  const handleShow = (selected) => {
+    setMovie(selected)
     setShow(!show);
   };
 
   const handleFav = () => {
     setSaved(!saved);
-  };
-
-  const handleUrl = (select) => {
-    
   };
 
   return (
@@ -129,11 +123,11 @@ const App = () => {
                   <Section key={genre.value} genre={genre.value} />
                 ))} */}
                 <Section genre={'RIN'} handleShow={handleShow} />
-             
+                <Section genre={'Snyper'} handleShow={handleShow} />
               </Box>
             )}
-            {show &&
-              <Video handleShow={handleShow} handleFav={handleFav} saved={saved} url={url} />
+            {show && movie &&
+              <Video handleShow={handleShow} handleFav={handleFav} saved={saved} movie={movie} />
             }
             <div
               className='page-end'
@@ -141,7 +135,6 @@ const App = () => {
                 setLimit(limit + genreIncrement)
               }}
             />
-
             {admin &&
               <VerifyUsers approved={approved} setApproved={setApproved} awaiting={awaiting} setAwaiting={setAwaiting} />
             }

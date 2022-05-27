@@ -4,7 +4,7 @@ import StarIcon from '@mui/icons-material/Star';
 
 import { IconButton, Box, Typography } from '@mui/material';
 
-const Video = ({ handleShow, handleFav, saved, url }) => {
+const Video = ({ handleShow, handleFav, saved, movie }) => {
     return (
         <Box id='player'>
             <Box sx={{ flexGrow: 1, width: '100%', justifyContent: 'space-between', display: 'flex', marginTop: '-1%', alignItems: 'center', padding: '7px' }}>
@@ -14,7 +14,7 @@ const Video = ({ handleShow, handleFav, saved, url }) => {
                     </IconButton>
                 </Box>
                 <Box>
-                    <Typography variant='h3'>Title</Typography>
+                    <Typography variant='h3'>{movie.title}</Typography>
                 </Box>
                 <Box>
                     <IconButton aria-label='close' onClick={handleShow}>
@@ -23,7 +23,7 @@ const Video = ({ handleShow, handleFav, saved, url }) => {
                 </Box>
             </Box>
 
-            <iframe id='frame' src='https://drive.google.com/file/d/15ShuJo17YjH6_KpRUDW67M2g4LY0K2Zl/preview' width='1491' height='837' allow='autoplay' allowfullscreen='allowfullscreen'></iframe>
+            <iframe id='frame' src={`${movie.thumbnail}`} poster="favicon.ico" width='1491' height='837' allow='autoplay' allowFullScreen='allowfullscreen'></iframe>
         
         </Box>
     );

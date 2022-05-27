@@ -6,18 +6,17 @@ const Card = ({ movie, handleShow }) => {
   return (
     <div
       className="card"
-      onMouseEnter={() => setIsShown(true)}
-      onMouseLeave={() => setIsShown(false)}
+      onClick={() => setIsShown(true)}
     >
       {!isShown && (
-        <video className="video" controls onClick={handleShow}>
+        <video className="video" controls>
           <source src={movie.thumbnail} type="video/mp4" />
         </video>
       )}
 
       {isShown && (
         <>
-          <video className="video" onClick={handleShow} controls autoPlay={true} loop>
+          <video className="video" onClick={handleShow(movie)} controls autoPlay={true} loop>
             <source src={movie.thumbnail} type="video/mp4" />
           </video>
           <div className="info-box">

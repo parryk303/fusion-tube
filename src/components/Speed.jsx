@@ -24,7 +24,7 @@ const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
 const actions = [
   { icon: <StarBorderOutlinedIcon />, name: 'Saved' },
   { icon: <AccountTreeTwoToneIcon />, name: 'RIN' },
-  { icon: <LocationSearchingIcon />, name: 'Snypr' },
+  { icon: <LocationSearchingIcon />, name: 'Snyper' },
   { icon: <ComputerIcon />, name: 'Nxlogs' },
   { icon: <PrecisionManufacturingIcon />, name: 'SOAR' },
 ];

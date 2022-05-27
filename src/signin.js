@@ -84,7 +84,7 @@ export default function Signin() {
                 ) : (
                     <Box>
                         <Box sx={{ display: 'flex', fontFamily: 'HandelGo', justifyContent: 'center' }}>
-                            <Typography sx={{ fontFamily: 'HandelGo' }} variant='h3'>Operation Dashboard</Typography>
+                            <Typography sx={{ fontFamily: 'HandelGo' }} variant='h3'>Fusion Tube</Typography>
                         </Box>
                         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '2%' }}>
                             <Button onClick={handleLogin} aria-live='polite'>
