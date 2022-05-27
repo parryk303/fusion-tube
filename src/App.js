@@ -1,14 +1,9 @@
 import './styles/App.css'
 import './styles/index.css';
 import {
-  Toolbar,
-  AppBar,
-  IconButton,
-  Button,
-  Typography,
-  Box,
-  Popper,
-  Fade,
+
+  Box
+
 } from '@mui/material';
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -48,6 +43,8 @@ const App = () => {
   const [awaiting, setAwaiting] = useState();
 
   const [show, setShow] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [url, setUrl] = useState(null);
 
   const [genres, setGenres] = useState(null)
   const [limit, setLimit] = useState(genreIncrement)
@@ -108,11 +105,21 @@ const App = () => {
     setShow(!show);
   };
 
+  const handleFav = () => {
+    setSaved(!saved);
+  };
+
+  const handleUrl = (select) => {
+    
+  };
+
   return (
     <>
       {!session || !handleVerify() ? <Signin /> :
         <ThemeProvider theme={isDarkTheme ? createTheme(dark) : createTheme(light)}>
-          <NavBar isDarkTheme={isDarkTheme} changeTheme={changeTheme} admin={admin} setAdmin={setAdmin} />
+          {!show &&
+            <NavBar isDarkTheme={isDarkTheme} changeTheme={changeTheme} admin={admin} setAdmin={setAdmin} />
+          }
           <CssBaseline />
           <Box sx={{ flexGrow: 1, width: '100%', justifyContent: 'center', display: 'grid' }}>
             {/* <HeroSection /> */}
@@ -121,20 +128,20 @@ const App = () => {
                 {/* {Object.values(genres).map((genre) => (
                   <Section key={genre.value} genre={genre.value} />
                 ))} */}
-                
-                 <Section genre={'Action'} name={'RIN'} handleShow={handleShow} />
-                 <Section genre={'Sci-Fi'} name={'Snyper'} />
-                 <Section genre={'Nxlogs'} name={'Nxlogs'} />
+                <Section genre={'RIN'} handleShow={handleShow} />
+             
               </Box>
             )}
-            <Video handleShow={handleShow} />
+            {show &&
+              <Video handleShow={handleShow} handleFav={handleFav} saved={saved} url={url} />
+            }
             <div
               className='page-end'
               onMouseEnter={() => {
                 setLimit(limit + genreIncrement)
               }}
             />
-            
+
             {admin &&
               <VerifyUsers approved={approved} setApproved={setApproved} awaiting={awaiting} setAwaiting={setAwaiting} />
             }

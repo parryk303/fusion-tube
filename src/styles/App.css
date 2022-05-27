@@ -7,10 +7,32 @@
 }
 
 #player {
-width: 70vw;
-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-margin-top: 2%;
-padding: 30px;
+  width: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 0.5%;
+  padding: 30px;
+  border-radius: 17px;
+  background-color: #f8f9fa;
+  
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+}
+
+#playerDark {
+  width: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 2%;
+  padding: 30px;
+  border-radius: 17px;
+  background-color: #898989;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+}
+
+#frame {
+  border-radius: 17px;
+}
+
+#saved {
+  color: #ff7b09;
 }
 
 .nav {
@@ -51,7 +73,7 @@ padding: 30px;
 }
 
 .more {
-  background-color: rgba(255,255,255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .card {
@@ -81,13 +103,14 @@ video::-webkit-media-controls {
 }
 
 .movie-section:focus-within .card,
-.movie-section:focus, .card {
+.movie-section:focus,
+.card {
   transform: translate(-25%);
   z-index: 1;
 }
 
-.card:focus ~ .card,
-.card:hover ~ .card {
+.card:focus~.card,
+.card:hover~.card {
   transform: translateX(25%)
 }
 
@@ -124,7 +147,7 @@ a {
 }
 
 .more-button:hover {
-  background-color: rgb(255,255,255, 0.5);
+  background-color: rgb(255, 255, 255, 0.5);
 }
 
 .page-end {
@@ -178,10 +201,10 @@ li {
 #dash {
   background-color: transparent;
   flex-grow: 1;
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 1%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
   margin: 0.25%;
 }
 
@@ -211,7 +234,7 @@ li {
 #cellDark {
   text-align: center;
   font-family: 'HandelGo';
-  color: #F8F9FA;;
+  color: #F8F9FA;
   padding: 1%;
 }
 
@@ -268,38 +291,14 @@ li {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-#pagination {
-  /* color: #49089e; */
-  font-size: large;
-  width: 100%;
-}
-
-#tagFilter {
-  font-family: 'HandelGo';
-  width: fit-content;
-  background-color: #49089e;
-}
-
-#details {
-  color: white;
-  /* border-radius: 9px; */
-  size: 50px;
- }
-
- #details:hover {
-  color: #ff7b09;
-  padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
 #adminButton {
   height: 50px;
   width: 50px;
   border-radius: 9px;
   size: 50px;
- }
+}
 
- #adminButton:hover {
+#adminButton:hover {
   color: #ff7b09;
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

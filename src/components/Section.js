@@ -24,7 +24,7 @@ const Section = ({ genre, name, handleShow }) => {
   return (
     <Box sx={{ justifyContent: 'center', display: 'grid' }}>
       <Box sx={{ textAlign: 'center', display: 'flex' }}>
-        <Typography variant='h4'>{name}</Typography>
+        <Typography variant='h4'>{genre}</Typography>
       </Box>
       <Box sx={{ justifyContent: 'center', display: 'flex', marginLeft: '10%' }}>
         {movies && (

@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import ComputerIcon from '@mui/icons-material/Computer';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
@@ -21,10 +22,11 @@ const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
 }));
 
 const actions = [
+  { icon: <StarBorderOutlinedIcon />, name: 'Saved' },
   { icon: <AccountTreeTwoToneIcon />, name: 'RIN' },
   { icon: <LocationSearchingIcon />, name: 'Snypr' },
   { icon: <ComputerIcon />, name: 'Nxlogs' },
-  // { icon: <PrecisionManufacturingIcon />, name: 'SOAR' },
+  { icon: <PrecisionManufacturingIcon />, name: 'SOAR' },
 ];
 
 export default function PlaygroundSpeedDial() {
@@ -36,7 +38,7 @@ export default function PlaygroundSpeedDial() {
       sx={{ marginTop: '1%', marginLeft: '0.5%' }}
       ariaLabel='SpeedDial playground example'
       hidden={hidden}
-      icon={<SpeedDialIcon />}
+      icon={<SpeedDialIcon sx={{ bac: 'red' }} />}
       direction={direction}
     >
       {actions.map((action) => (

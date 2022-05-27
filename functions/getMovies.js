@@ -15,8 +15,6 @@ exports.handler = async function (event) {
       values {
         year,
         title,
-        duration,
-        synopsis,
         thumbnail
       }
       pageState
