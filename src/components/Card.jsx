@@ -9,7 +9,7 @@ const Card = ({ movie, handleShow }) => {
       onClick={() => setIsShown(true)}
     >
       {!isShown && (
-        <video className="video" controls>
+        <video className="video" controls autoPlay={true} loop>
           <source src={movie.thumbnail} type="video/mp4" />
         </video>
       )}

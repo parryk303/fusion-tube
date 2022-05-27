@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Card from './Card'
 import { Box, Typography } from '@mui/material';
 
-const Section = ({ genre, name, handleShow }) => {
+const Section = ({ vids, genre, name, handleShow }) => {
   const [movies, setMovies] = useState(null)
   const [pageState, setPageState] = useState(null)
 
@@ -27,9 +27,9 @@ const Section = ({ genre, name, handleShow }) => {
         <Typography variant='h4'>{genre}</Typography>
       </Box>
       <Box sx={{ justifyContent: 'center', display: 'flex', marginLeft: '10%' }}>
-        {movies && (
+        {vids && (
           <div className='movie-section'>
-            {movies.map((movie, index) => (
+            {vids.map((movie, index) => (
               <Card key={index} movie={movie} handleShow={handleShow} />
             ))}
             <div

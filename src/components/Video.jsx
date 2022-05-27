@@ -23,7 +23,7 @@ const Video = ({ handleShow, handleFav, saved, movie }) => {
                 </Box>
             </Box>
 
-            <iframe id='frame' src={`${movie.thumbnail}`} poster="favicon.ico" width='1491' height='837' allow='autoplay' allowFullScreen='allowfullscreen'></iframe>
+            <iframe id='frame' src={`${movie.url}`} poster="favicon.ico" width='1491' height='837' allow='autoplay' allowFullScreen='allowfullscreen'></iframe>
         
         </Box>
     );

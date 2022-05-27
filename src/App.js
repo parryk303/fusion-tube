@@ -43,6 +43,8 @@ const App = () => {
   const [saved, setSaved] = useState(false);
   const [movie, setMovie] = useState();
 
+  const [vids, setVids] = useState();
+
   const [genres, setGenres] = useState(null)
   const [limit, setLimit] = useState(genreIncrement)
 
@@ -78,6 +80,19 @@ const App = () => {
     verify()
   }, [])
 
+  useEffect(() => {
+    const getData = async () => {
+      const { data, error } = await supabase
+        .from('tube')
+        .select('*')
+        .eq('id', 1)
+      if (!error) {
+        setVids(data[0].data)
+      }
+    }
+    getData()
+  }, [])
+
   const fetchData = async () => {
     const response = await fetch('/.netlify/functions/getGenres', {
       method: 'POST',
@@ -87,7 +102,6 @@ const App = () => {
     setGenres(responseBody.data.reference_list.values)
   }
 
-  console.log(limit)
 
   useEffect(() => {
     fetchData()
@@ -117,13 +131,14 @@ const App = () => {
           <CssBaseline />
           <Box sx={{ flexGrow: 1, width: '100%', justifyContent: 'center', display: 'grid' }}>
             {/* <HeroSection /> */}
-            {genres && !show && (
+            {vids && !show && (
               <Box sx={{ flexGrow: 1, width: '100%', justifyContent: 'center', marginTop: '2%' }}>
                 {/* {Object.values(genres).map((genre) => (
                   <Section key={genre.value} genre={genre.value} />
                 ))} */}
-                <Section genre={'RIN'} handleShow={handleShow} />
-                <Section genre={'Snyper'} handleShow={handleShow} />
+                <Section vids={vids['Customer Onboarding']} genre={'Customer Onboarding'} handleShow={handleShow} />
+                <Section vids={vids['Atlantis Conference']} genre={'Atlantis Conference'} handleShow={handleShow} />
+                <Section vids={vids['Parsing & Validation']} genre={'Parsing & Validation'} handleShow={handleShow} />
               </Box>
             )}
             {show && movie &&

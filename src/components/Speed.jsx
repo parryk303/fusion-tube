@@ -4,6 +4,7 @@ import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
+import OndemandVideoTwoToneIcon from '@mui/icons-material/OndemandVideoTwoTone';
 import ComputerIcon from '@mui/icons-material/Computer';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
@@ -23,6 +24,7 @@ const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
 
 const actions = [
   { icon: <StarBorderOutlinedIcon />, name: 'Saved' },
+  { icon: <OndemandVideoTwoToneIcon />, name: 'show all' },
   { icon: <AccountTreeTwoToneIcon />, name: 'RIN' },
   { icon: <LocationSearchingIcon />, name: 'Snyper' },
   { icon: <ComputerIcon />, name: 'Nxlogs' },
