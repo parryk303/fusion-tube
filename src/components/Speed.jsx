@@ -35,7 +35,7 @@ export default function PlaygroundSpeedDial() {
 
   return (
     <StyledSpeedDial
-      sx={{ marginTop: '1%', marginLeft: '0.5%' }}
+      sx={{ marginTop: '1%', marginLeft: '17%' }}
       ariaLabel='SpeedDial playground example'
       hidden={hidden}
       icon={<SpeedDialIcon sx={{ bac: 'red' }} />}

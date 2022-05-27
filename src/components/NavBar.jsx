@@ -14,6 +14,7 @@ import {
 import { supabase } from '../supabaseClient';
 import { useState } from 'react';
 import Speed from './Speed';
+import Search from './Search';
 
 export default function NavBar({ isDarkTheme, changeTheme, admin, setAdmin }) {
   const [open, setOpen] = useState(false);
@@ -33,15 +34,22 @@ export default function NavBar({ isDarkTheme, changeTheme, admin, setAdmin }) {
     <Box sx={{ flexGrow: 1, width: '100%' }}>
       <AppBar id={`${isDarkTheme ? 'navDark' : 'nav'}`} position='static'>
         <Toolbar id='tool' sx={{ justifyContent: 'space-between', padding: '1%' }}>
-          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Speed />
-          </Box>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width:'400px' }}>
+
+           
+           
+
+         
+         
+              <Search />
+              
+            </Box>
           <Box>
             <img id='logo' src='/logoBig.png' alt='logo' width='481' height='80' />
           </Box>
           {user &&
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-             
+
               <img
                 onClick={handleClick('bottom')}
                 id='profile'
